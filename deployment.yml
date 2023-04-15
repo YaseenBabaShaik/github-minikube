@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-example
+  namespace: dev  # Add the namespace field here
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-boot-example
+  template:
+    metadata:
+      labels:
+        app: spring-boot-example
+    spec:
+      containers:
+        - name: spring-boot-example
+          image: spring-boot-example:v1
+          ports:
+            - containerPort: 7000
+      restartPolicy: Always
