@@ -1,0 +1,5 @@
+spring:
+  main:
+    lazy-initialization: true
+server:
+  port: 7000
